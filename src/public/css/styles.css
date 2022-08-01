@@ -11,5 +11,26 @@ body {
 
 .logo {
     width: 40%;
+}
 
+.sendmessage {
+    position: fixed;
+    bottom: 0;
+    width: 78%;
+}
+
+.send {
+    width: 2.5%;
+    float: right;
+}
+
+.write {
+    width: 97.5%;
+    float: left;
+}
+
+.dmmessage {
+    position: fixed;
+    bottom: 0;
+    float: left;
 }

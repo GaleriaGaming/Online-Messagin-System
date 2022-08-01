@@ -6,8 +6,12 @@
             <h1>Vira Discord Bot Website</h1>
             <br>
         </div>
+        {{#if user}}
+        <h4>Preciona <a href="/message/dm">aqui</a> para empezar a enviar mensajes</h4>
+        {{else}}
         <h4>Necesitas crear una cuenta para continuar</h4>
         <a href="/oauth/signup">Crear cuenta</a>
+        {{/if}}
 
     </div>
 

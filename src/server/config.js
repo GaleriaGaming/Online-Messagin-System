@@ -12,7 +12,7 @@ module.exports = app => {
     // Settings
     app.set('port', process.env.PORT || 3000)
     app.set('views', path.join(__dirname, '../views'));
-    app.engine('.hbs', exphbs.engine({
+    app.engine('.hbs', exphbs({
         defaultLayout:'main',
         partialsDir: path.join(app.get('views'), 'partials'),
         layoutsDir: path.join(app.get('views'), 'layouts'),
@@ -38,7 +38,7 @@ module.exports = app => {
         res.locals.success_msg = req.flash('success_msg');
         res.locals.error_msg = req.flash('error_msg');
         res.locals.error = req.flash('error');
-        res.locals.user = req.user;
+        res.locals.user = req.user || null;
         next();
     });
 

@@ -1,0 +1,39 @@
+<div class="container">
+    {{!-- Show messages --}}
+
+        <div class="row dmmessage">
+            {{#each messages}}
+                <div class="col-md-3 dmmessage2">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-tittle">
+                            {{user}}
+                            </h4>
+                            <p>
+                            {{message}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+
+    {{!-- Send messages --}}
+    </div>
+    <div class="sendmessage">
+        <div class="card">
+            <div class="card-header">
+                <form action="/messages/dm" method="POST">
+                    <div class="form-group write">
+                        <textarea name="message" class="form-control" placeholder="Write here to send a message"></textarea>
+                    </div>
+                    <div class="form-group send">
+                        <button class="btn btn-light btn-block" type="submit">
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

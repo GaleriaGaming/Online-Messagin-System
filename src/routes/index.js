@@ -3,6 +3,9 @@ const router = express.Router();
 
 const home = require('../controllers/home');
 const oauth = require('../controllers/oauth');
+const messages = require('../controllers/messages');
+
+const { isAuthenticated } = require('../helpers/auth');
 
 
 module.exports = app => {
@@ -19,7 +22,11 @@ module.exports = app => {
     
     router.post('/oauth/signin', oauth.signindata);
 
-    router.get('/oauth/logout', oauth.logout)
+    router.get('/oauth/logout', isAuthenticated, oauth.logout);
+
+    router.get('/messages/dm', isAuthenticated, messages.dm);
+
+    router.post('/messages/dm', isAuthenticated, messages.dmmessage);
 
     app.use(router);
 
