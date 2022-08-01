@@ -5,7 +5,7 @@ const session = require('express-session')
 const express = require('express');
 const errorHandler = require('errorhandler');
 const routes = require('../routes/index');
-const passport = require('passport')
+const passport = require('passport');
 
 module.exports = app => {
 
