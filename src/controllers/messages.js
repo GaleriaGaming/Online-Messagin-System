@@ -1,12 +1,15 @@
 const ctrl = {};
 
 const DMmessageSchema = require('../models/dmmessages');
+const Users = require('../models/user');
 
 
 ctrl.dm = async (req, res ) => {
     const messages = await DMmessageSchema.find({}).lean();
     res.render('messages/directmessages', { messages });
-
+    const users = await Users.find({}).lean();
+    res.render('messages/directmessages', { users });
+    console.log(users.name)
 };
 
 ctrl.dmmessage = async (req, res) => {
